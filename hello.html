@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
-<body>
-<script>
-(function () {
-    if (window.panel) {
+  <head></head>
+  <body>
+    <script>
+      function () {
+        if (window.panel) {
         window.panel.remove();
         window.panel = null;
         return;
-    }
-    const p = document.createElement("div");
-    window.panel = p;
-    Object.assign(p.style, {
+      }
+    
+      const p = document.createElement("div");
+      window.panel = p;
+    
+      Object.assign(p.style, {
         position: "fixed",
         top: "10px",
         left: "10px",
@@ -24,23 +27,24 @@
         zIndex: "2147483647",
         fontFamily: "sans-serif",
         textAlign: "center"
-    });
-    const t = document.createElement("div");
-    t.innerText = "text";
-    t.style.marginBottom = "10px";
-    t.style.fontSize = "18px";
-    const b = document.createElement("button");
-    b.innerText = "button";
-    b.style.cursor = "pointer";
-    b.style.padding = "6px 12px";
-
-    b.onclick = () => {
-        t.innerText = "button clicked";
-    };
-    p.appendChild(t);
-    p.appendChild(b);
-    document.body.appendChild(p);
-})();
-</script>
-</body>
+      });
+    
+      const t = document.createElement("div");
+      t.innerText = "text";
+      t.style.marginBottom = "10px";
+      t.style.fontSize = "18px";
+    
+      const b = document.createElement("button");
+      b.innerText = "button";
+      b.style.cursor = "pointer";
+      b.style.padding = "6px 12px";
+      b.onclick = () => {
+          t.innerText = "button clicked";
+      };
+      p.appendChild(t);
+      p.appendChild(b);
+      document.body.appendChild(p);
+      })();
+    </script>
+  </body>
 </html>

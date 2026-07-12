@@ -1,40 +1,30 @@
 {
-"manifest_version":3,
-"name":"Background Editor",
-"version":"1.0",
-"description":"Visual CSS background editor",
-"action":{
-"default_popup":"popup.html",
-"default_icon":"blank.png"
-},
-"permissions":[
-"storage",
-"activeTab",
-"scripting"
-],
-"host_permissions":[
-"<all_urls>"
-],
-"background":{
-"service_worker":"background.js"
-},
-"content_scripts":[
-{
-"matches":["<all_urls>"],
-"js":["content.js"]
-}
-],
-"web_accessible_resources":[
-{
-"resources":[
-"modules/*",
-"backgrounds/*",
-"ui/*"
-],
-"matches":["<all_urls>"]
-}
-],
-"icons":{
-"32":"blank.png"
-}
+  "manifest_version":3,
+  "name":"Background Editor",
+  "version":"1.0",
+  "description":"Edit webpage backgrounds.",
+  "icons":{
+    "32":"icons/icon32.png"
+  },
+  "action":{
+    "default_popup":"popup.html",
+    "default_icon":"icons/icon32.png"
+  },
+  "permissions":[
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions":[
+    "<all_urls>"
+  ],
+  "content_scripts":[
+    {
+      "matches":[
+        "<all_urls>"
+      ],
+      "js":[
+        "content.js"
+      ]
+    }
+  ]
 }
